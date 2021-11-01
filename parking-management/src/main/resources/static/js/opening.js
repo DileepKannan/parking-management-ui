@@ -10,7 +10,7 @@ $(document)
 				.ajax({
 					type: "GET",
 					crossDomain: true,
-					url: "http://localhost:8081/parkings",
+					url: "https://parking-management-api-new.herokuapp.com/parkings",
 					success: function(obj) {
 						for (var key in obj) {
 							jsonObj = obj[key];
@@ -62,7 +62,7 @@ $(document)
 									type: "POST",
 									crossDomain: true,
 									contentType: "application/json",
-									url: "http://localhost:8081/parking",
+									url: "https://parking-management-api-new.herokuapp.com/parking",
 									data: JSON
 										.stringify(indexed_array),
 									success: function(data) {

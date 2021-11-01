@@ -18,7 +18,7 @@
 							source : function(request, response) {
 								$.ajax({
 									type : "GET",
-									url : "http://localhost:8081/vehicle",
+									url : "https://parking-management-api-new.herokuapp.com/vehicle",
 									async : true,
 									data : {
 										term : request.term
@@ -131,7 +131,7 @@
 								type : "POST",
 								crossDomain : true,
 								contentType : "application/json",
-								url : "http://localhost:8081/updateParking",
+								url : "https://parking-management-api-new.herokuapp.com/updateParking",
 								data : JSON.stringify(indexed_array),
 								success : function(data) {
 									$('#exampleModal').modal('show');
