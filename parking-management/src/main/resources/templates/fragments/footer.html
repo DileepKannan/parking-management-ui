@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+</head>
+<body>
+	<div th:fragment="footer" class="navbar navbar-fixed-bottom">
+
+		<div class="container">
+
+			<footer>
+				<!-- this is footer -->
+				&copy; 2021 Elsevier <span sec:authorize="isAuthenticated()">
+					| Logged user: <span sec:authentication="name"></span> | Roles: <span
+					sec:authentication="principal.authorities"></span> | <a
+					th:href="@{/logout}">Sign Out</a>
+				</span>
+				<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+				
+				<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+				<script
+					src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+				<script
+					src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+				<script
+					src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+
+
+			</footer>
+		</div>
+
+	</div>
+</body>
+</html>

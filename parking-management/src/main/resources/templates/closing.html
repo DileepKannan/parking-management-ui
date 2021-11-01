@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:replace="fragments/header :: header-css" />
+<title>Closing Form</title>
+</head>
+<body>
+
+	<div th:replace="fragments/header :: header" />
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6">
+				<div class="starter-template">
+					<form id="closinPage" name="closinPage" action="closing">
+
+						<div class="form-group">
+
+							<label for="vehicleNo" class="control-label">Vehicle No.</label>
+							<input type='text' class="form-control" id="vehicleNo"
+								name="vehicleNo" placeholder="Search Vehcile No."
+								autocomplete="off" /> <input type="hidden" name=parkingId
+								id="parkingId" />
+
+
+						</div>
+
+						<div class="form-group">
+
+
+							<label for="vehicleState" class="control-label">Vehicle
+								State.</label> <select class="form-control" id="vehicleState"
+								name="vehicleState">
+								<option selected>TN</option>
+								<option>KA</option>
+								<option>TS</option>
+								<option>KL</option>
+							</select>
+
+						</div>
+
+						<div class="form-group">
+							<label for="dtpickerdemo" class="control-label">Booked
+								Date</label>
+
+							<div class='col-sm-6 input-group date' id='dtpickerdemo'>
+
+								<input type='text' class="form-control" id="dateTime"
+									name="dateTime" /> <span class="input-group-addon"> <span
+									class="glyphicon glyphicon-calendar"></span>
+
+								</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="slotName" class="control-label">Booking Slot</label>
+							<select class="form-control" id="slotName" name="slotName">
+								<option value="SLOT-1">SLOT-1</option>
+								<option value="SLOT-2">SLOT-2</option>
+								<option value="SLOT-3">SLOT-3</option>
+								<option value="SLOT-4">SLOT-4</option>
+								<option value="SLOT-5">SLOT-5</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="dtpickerdemoclose" class="control-label">Closing
+								Time</label>
+
+							<div class='col-sm-6 input-group date' id='dtpickerdemoclose'>
+
+								<input type='text' class="form-control" id="closingTime"
+									name="closingTime" /> <span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+
+								</span>
+							</div>
+						</div>
+
+						<div class="form-group">
+
+							<label for="totalHours" class="control-label">Total
+								Duration</label> <input type='text' class="form-control" id="totalHours"
+								name="totalHours" />
+						</div>
+
+						<button type="button" id="btnUpdate" class=" btn btn-primary mb-2"
+							style="margin-top: 15px;">Update</button>
+					</form>
+				</div>
+			</div>
+			<div class="col-sm-3"></div>
+		</div>
+
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Booking</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">Booking updated successfully</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary"
+							onclick="funReload()">Ok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<!-- /.container -->
+	<div th:replace="fragments/footer :: footer" />
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" th:src="@{/js/closing.js}"></script>
+</body>
+</html>
